@@ -1,0 +1,256 @@
+{
+  "format": 1,
+  "restore": {
+    "G:\\Sample\\Blazors\\LiveTVShow\\LiveTVShow\\LiveTVShow\\Server\\LiveTVShow.Server.csproj": {}
+  },
+  "projects": {
+    "G:\\Sample\\Blazors\\LiveTVShow\\LiveTVShow\\LiveTVShow\\Client\\LiveTVShow.Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Sample\\Blazors\\LiveTVShow\\LiveTVShow\\LiveTVShow\\Client\\LiveTVShow.Client.csproj",
+        "projectName": "LiveTVShow.Client",
+        "projectPath": "G:\\Sample\\Blazors\\LiveTVShow\\LiveTVShow\\LiveTVShow\\Client\\LiveTVShow.Client.csproj",
+        "packagesPath": "C:\\Users\\mehdi63\\.nuget\\packages\\",
+        "outputPath": "G:\\Sample\\Blazors\\LiveTVShow\\LiveTVShow\\LiveTVShow\\Client\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mehdi63\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://git.mofid.dev/api/v4/projects/164/packages/nuget/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "G:\\Sample\\Blazors\\LiveTVShow\\LiveTVShow\\LiveTVShow\\Shared\\LiveTVShow.Shared.csproj": {
+                "projectPath": "G:\\Sample\\Blazors\\LiveTVShow\\LiveTVShow\\LiveTVShow\\Shared\\LiveTVShow.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.WebAssembly": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.Authentication": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
+              "version": "[6.0.10, 6.0.10]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "browser-wasm": {
+          "#import": []
+        }
+      }
+    },
+    "G:\\Sample\\Blazors\\LiveTVShow\\LiveTVShow\\LiveTVShow\\Server\\LiveTVShow.Server.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Sample\\Blazors\\LiveTVShow\\LiveTVShow\\LiveTVShow\\Server\\LiveTVShow.Server.csproj",
+        "projectName": "LiveTVShow.Server",
+        "projectPath": "G:\\Sample\\Blazors\\LiveTVShow\\LiveTVShow\\LiveTVShow\\Server\\LiveTVShow.Server.csproj",
+        "packagesPath": "C:\\Users\\mehdi63\\.nuget\\packages\\",
+        "outputPath": "G:\\Sample\\Blazors\\LiveTVShow\\LiveTVShow\\LiveTVShow\\Server\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mehdi63\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://git.mofid.dev/api/v4/projects/164/packages/nuget/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "G:\\Sample\\Blazors\\LiveTVShow\\LiveTVShow\\LiveTVShow\\Client\\LiveTVShow.Client.csproj": {
+                "projectPath": "G:\\Sample\\Blazors\\LiveTVShow\\LiveTVShow\\LiveTVShow\\Client\\LiveTVShow.Client.csproj"
+              },
+              "G:\\Sample\\Blazors\\LiveTVShow\\LiveTVShow\\LiveTVShow\\Shared\\LiveTVShow.Shared.csproj": {
+                "projectPath": "G:\\Sample\\Blazors\\LiveTVShow\\LiveTVShow\\LiveTVShow\\Shared\\LiveTVShow.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.ApiAuthorization.IdentityServer": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.Server": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Sample\\Blazors\\LiveTVShow\\LiveTVShow\\LiveTVShow\\Shared\\LiveTVShow.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Sample\\Blazors\\LiveTVShow\\LiveTVShow\\LiveTVShow\\Shared\\LiveTVShow.Shared.csproj",
+        "projectName": "LiveTVShow.Shared",
+        "projectPath": "G:\\Sample\\Blazors\\LiveTVShow\\LiveTVShow\\LiveTVShow\\Shared\\LiveTVShow.Shared.csproj",
+        "packagesPath": "C:\\Users\\mehdi63\\.nuget\\packages\\",
+        "outputPath": "G:\\Sample\\Blazors\\LiveTVShow\\LiveTVShow\\LiveTVShow\\Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mehdi63\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://git.mofid.dev/api/v4/projects/164/packages/nuget/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

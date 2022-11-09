@@ -1,0 +1,197 @@
+@page "/episodes"
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using LiveTVAdmin.Shared
+@attribute [Authorize]
+@inject HttpClient Http
+
+<h1>Episodes</h1>
+
+<p>Create, updated, or delete episodes.</p>
+
+@if (episodes == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+
+{
+    <p>
+        Future only:
+        <input type="checkbox" id="futureonly" @bind="futureOnly"/>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ShowId</th>
+                <th>Title</th>
+                <th>Scheduled Start Time</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var episode in episodes)
+            {
+                <tr>
+                    <td>@episode.ShowId</td>
+                    <td>@episode.Title</td>
+                    <td>@episode.ScheduledStartTime</td>
+                    <td>
+                        <button class="btn btn-primary" @onclick="@(e => Edit(episode))">Edit</button>
+                        <button class="btn btn-primary" @onclick="@(e => DeleteAsync(episode))">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    
+
+    <button class="btn btn-primary" @onclick="RefreshAsync">Refresh</button>
+
+    <EditForm Model="@episode" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <p>
+            <label>
+                Identifier:
+            </label><br />
+            <InputText id="id" @bind-Value="episode.Id" />
+        </p>
+        <p>
+            <label>
+                Show Id:
+            </label><br />
+            <InputSelect @bind-Value="episode.ShowId">
+                <option value="">Select show</option>
+                @foreach (var show in shows)
+                    {
+                    <option value="@show.Id" label="@show.Id" />
+                    }
+            </InputSelect>
+        </p>
+        <p>
+            <label>
+                Title:
+            </label><br />
+            <InputText id="url" @bind-Value="episode.Title" />
+        </p>
+
+        <p>
+            <label>
+                Schedueld Start Date/Time:
+            </label><br />
+            <InputDate id="scheduledstarttime" @bind-Value="episode.ScheduledStartTime" />
+            <InputText type="time" @bind-Value="TimeProxy" />
+        </p>
+        <p>
+            <label>
+                Description (include [Featuring: guest (twitter), guest 2 (twitter)] :
+            </label><br />
+            <InputTextArea id="description" @bind-Value="episode.Description" />
+        </p>
+        <p>
+            <label>
+                ThumbnailUrl:
+            </label><br />
+            <InputText id="thumbnailUrl" @bind-Value="episode.ThumbnailUrl" />
+        </p>
+
+        <p>
+            <label>
+                Url (Twitch or YouTube):
+            </label><br />
+            <InputText id="url" @bind-Value="episode.Url" />
+        </p>
+
+        <p>
+            <label>
+                Community Links:
+            </label><br />
+            <InputText id="communitylinks" @bind-Value="episode.CommunityLinksUrl" />
+        </p>
+
+
+        <p>
+            <label>
+                Show Notes:
+            </label><br />
+            <InputText id="shownotes" @bind-Value="episode.ShowNotesUrl" />
+        </p>
+
+
+
+        <button type="submit">Submit</button>
+    </EditForm>
+}
+
+@code {
+
+    private bool futureOnly = true;
+    private Episode episode;
+    private string editEpisodeId;
+
+    private async void HandleValidSubmit()
+    {
+        episode.ScheduledStartTime = episode.ScheduledStartTime.Date.Add(LocalTime);
+        if (episode.IsEditing)
+        {
+            await Http.PutAsJsonAsync($"api/Episodes/{editEpisodeId}", episode);
+            episode.IsEditing = false;
+        }
+        else
+        {
+            await Http.PostAsJsonAsync("api/Episodes", episode);
+        }
+        episode = new Episode();
+        await RefreshAsync();
+        Console.WriteLine("OnValidSubmit");
+    }
+
+    private TimeSpan LocalTime = TimeSpan.FromHours(0);
+    private string TimeProxy
+    {
+        get => LocalTime.ToString();
+        set => TimeSpan.TryParse(value, out LocalTime);
+    }
+
+    async Task DeleteAsync(Episode delete)
+    {
+        await Http.DeleteAsync($"api/Episodes/{delete.Id}");
+        await RefreshAsync();
+    }
+
+    private void Edit(Episode edit)
+    {
+        LocalTime = edit.ScheduledStartTime.TimeOfDay;
+        editEpisodeId = edit.Id;
+        episode = edit;
+        episode.IsEditing = true;
+        StateHasChanged();
+    }
+
+    async Task RefreshAsync()
+    {
+        try
+        {
+            episodes = await Http.GetFromJsonAsync<Episode[]>("api/Episodes");
+            if (futureOnly)
+                episodes = episodes.Where(e => e.ScheduledStartTime >= DateTime.Now).ToArray();
+            shows = await Http.GetFromJsonAsync<Show[]>("api/Shows");
+            episode = new Episode() { ScheduledStartTime = DateTime.Now };
+            StateHasChanged();
+        }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
+
+    }
+
+    private Episode[] episodes;
+    private Show[] shows;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await RefreshAsync();
+    }
+}

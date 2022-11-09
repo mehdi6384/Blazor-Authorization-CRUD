@@ -1,0 +1,12 @@
+G:\Sample\Blazors\LiveTVShow\LiveTVShow\LiveTVShow\Shared\bin\Debug\net6.0\LiveTVShow.Shared.deps.json
+G:\Sample\Blazors\LiveTVShow\LiveTVShow\LiveTVShow\Shared\bin\Debug\net6.0\LiveTVShow.Shared.dll
+G:\Sample\Blazors\LiveTVShow\LiveTVShow\LiveTVShow\Shared\bin\Debug\net6.0\LiveTVShow.Shared.pdb
+G:\Sample\Blazors\LiveTVShow\LiveTVShow\LiveTVShow\Shared\obj\Debug\net6.0\LiveTVShow.Shared.csproj.AssemblyReference.cache
+G:\Sample\Blazors\LiveTVShow\LiveTVShow\LiveTVShow\Shared\obj\Debug\net6.0\LiveTVShow.Shared.GeneratedMSBuildEditorConfig.editorconfig
+G:\Sample\Blazors\LiveTVShow\LiveTVShow\LiveTVShow\Shared\obj\Debug\net6.0\LiveTVShow.Shared.AssemblyInfoInputs.cache
+G:\Sample\Blazors\LiveTVShow\LiveTVShow\LiveTVShow\Shared\obj\Debug\net6.0\LiveTVShow.Shared.AssemblyInfo.cs
+G:\Sample\Blazors\LiveTVShow\LiveTVShow\LiveTVShow\Shared\obj\Debug\net6.0\LiveTVShow.Shared.csproj.CoreCompileInputs.cache
+G:\Sample\Blazors\LiveTVShow\LiveTVShow\LiveTVShow\Shared\obj\Debug\net6.0\LiveTVShow.Shared.dll
+G:\Sample\Blazors\LiveTVShow\LiveTVShow\LiveTVShow\Shared\obj\Debug\net6.0\refint\LiveTVShow.Shared.dll
+G:\Sample\Blazors\LiveTVShow\LiveTVShow\LiveTVShow\Shared\obj\Debug\net6.0\LiveTVShow.Shared.pdb
+G:\Sample\Blazors\LiveTVShow\LiveTVShow\LiveTVShow\Shared\obj\Debug\net6.0\ref\LiveTVShow.Shared.dll
