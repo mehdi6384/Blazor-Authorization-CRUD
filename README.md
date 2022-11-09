@@ -1,4 +1,4 @@
-# Blazor-Authorization-CRUD
+# Blazor-Authorization-And-CRUD
 Authorization and CRUD operation in Blazor Wasm .Net Core 6
 
 # To run the application apply the following settings
